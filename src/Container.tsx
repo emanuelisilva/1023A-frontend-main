@@ -1,19 +1,19 @@
-import {useState} from "react"
+import { useState } from "react"
 interface ContainerProps{
-nome:string
+  nome:string
 }
 function Container(props:ContainerProps){
-const [contador,setContador] = useState(0)
-function mudar(){
-setContador(20)
-console.log(contador)
-}
-return(
- <>
-<h1>{props.nome}</h1>
-Valor contador:{contador}
-<button onClick={mudar}>Mudar</button>
-</>
- )
+  function trataInput(event:React.ChangeEvent<HTMLInputElement>){
+    console.log(event.currentTarget.value)
+  }
+  return(
+    <>
+      <h1>{props.nome}</h1>
+      Texto:{texto}
+      <input type="text" 
+              placeholder="Mostrar Texto" 
+              onChange={trataInput}/>
+    </>
+  )
 }
 export default Container
